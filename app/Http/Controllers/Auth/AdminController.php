@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\AdminLoginRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 
 class AdminController extends Controller
@@ -23,13 +24,13 @@ class AdminController extends Controller
 
 
     public function store(AdminLoginRequest $request)
-    {
-        $request->authenticate();
+{
+    $request->authenticate();
 
-        $request->session()->regenerate();
+    $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::ADMIN);
-    }
+    return redirect()->intended(RouteServiceProvider::ADMIN);
+}
 
 
     public function show($id)
@@ -50,8 +51,14 @@ class AdminController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        Auth::guard('admin')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
