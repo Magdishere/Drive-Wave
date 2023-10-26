@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\Dashboard\CarsSectionsController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,14 +27,25 @@ Route::group(
     ], function(){
 
 
+        //User Dashboard------------------------------------
         Route::get('/dashboard/user', function () {
             return view('Dashboard.User.dashboard');
         })->middleware(['auth'])->name('dashboard.user');
-
-
+        //---------------------------------------------------
+        //Admin Dashboard------------------------------------
         Route::get('/dashboard/admin', function () {
             return view('Dashboard.Admin.dashboard');
         })->middleware(['auth:admin'])->name('dashboard.admin');
+        //---------------------------------------------------
+
+        Route::middleware(['auth:admin'])->group(function(){
+
+            //Cars Sections------------------------------------
+            Route::resource('CarsSections', CarsSectionsController::class);
+
+        });
+
+
 
 
         require __DIR__.'/auth.php';
