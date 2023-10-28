@@ -13,5 +13,8 @@ interface CarsSectionRepositoryInterface{
     //Update Section
     public function update($request);
 
+    //Delete Section
+    public function destroy($request);
+
 
 }

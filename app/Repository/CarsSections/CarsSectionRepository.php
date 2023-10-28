@@ -36,4 +36,13 @@ class CarsSectionRepository implements CarsSectionRepositoryInterface{
         session()->flash('edit');
         return redirect()->route('CarsSections.index');
     }
+
+    public function destroy($request){
+
+
+        CarsSections::findOrFail($request->id)->delete();
+        session()->flash('delete');
+        return redirect()->route('CarsSections.index');
+
+    }
 }

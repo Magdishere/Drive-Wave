@@ -12,5 +12,8 @@ return [
     'All Sections' => 'جميع الأقسام',
     'Actions' => 'العمليات',
     'Edit Section' => 'تعديل القسم',
+    'Delete Section' => 'حذف القسم',
+    'Delete' => 'حذف',
+    'Warning' => 'هل أنت متأكد أنك تريد حذف هذا القسم؟',
 
 ];
