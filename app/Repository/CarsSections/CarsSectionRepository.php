@@ -1,7 +1,7 @@
 <?php
 namespace App\Repository\CarsSections;
 
-use App\Models\Models\CarsSections;
+use App\Models\CarsSections;
 use App\Interfaces\CarsSections\CarsSectionRepositoryInterface;
 
 class CarsSectionRepository implements CarsSectionRepositoryInterface{

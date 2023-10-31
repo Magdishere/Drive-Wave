@@ -6,4 +6,6 @@ return [
     'Sections' => 'Sections',
     'Cars Sections' => 'Cars Sections',
     'All Sections' => 'All Sections',
+    'All Brands' => 'All Brands',
+    'Cars Brands' => 'Cars Brands',
 ];
