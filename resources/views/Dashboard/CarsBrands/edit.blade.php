@@ -9,7 +9,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('CarsBrands.update', 'test') }}" method="post">
+            <form action="{{ route('CarsBrands.update', 'test') }}" method="post" enctype="multipart/form-data">
                 {{ method_field('patch') }}
                 {{ csrf_field() }}
                 @csrf
@@ -20,6 +20,9 @@
                     <br>
                     <label for="exampleInputPassword1">{{trans('Dashboard/carsbrands_trans.Country')}}</label>
                     <input type="text" name="country" value="{{ $brand->country }}" class="form-control">
+                    <br>
+                    <label for="logo_path">{{trans('Dashboard/carsbrands_trans.Brand Logo')}}</label>
+                    <input type="file" name="logo_path" id="logo_path" accept="image/*" class="form-control">
                     <br>
                 </div>
                 <div class="modal-footer">

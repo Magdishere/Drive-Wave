@@ -8,13 +8,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('CarsBrands.store') }}" method="post" autocomplete="off">
+            <form action="{{ route('CarsBrands.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <label for="exampleInputPassword1">{{trans('Dashboard/carsbrands_trans.Brand Name')}}</label>
                     <input type="text" name="name" class="form-control">
                     <label for="exampleInputPassword1">{{trans('Dashboard/carsbrands_trans.Country')}}</label>
                     <input type="text" name="country" class="form-control">
+                    <label for="logo_path">{{trans('Dashboard/carsbrands_trans.Brand Logo')}}</label>
+                    <input type="file" name="logo_path" id="logo_path" accept="image/*" class="form-control">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Dashboard/carsbrands_trans.Close')}}</button>

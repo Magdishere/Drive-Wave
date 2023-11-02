@@ -2,6 +2,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CarsBrandsController;
+use App\Http\Controllers\Dashboard\CarsModelsController;
 use App\Http\Controllers\Dashboard\CarsSectionsController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,8 @@ Route::group(
             Route::resource('CarsSections', CarsSectionsController::class);
             //Cars Brands--------------------------------------
             Route::resource('CarsBrands', CarsBrandsController::class);
+            //Cars Models--------------------------------------
+            Route::resource('CarsModels', CarsModelsController::class);
 
         });
 

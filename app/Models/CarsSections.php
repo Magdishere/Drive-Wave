@@ -19,4 +19,6 @@ class CarsSections extends Model
 
      // 3. To define which attributes needs to be translated
     public $translatedAttributes = ['type', 'description'];
+
+
 }

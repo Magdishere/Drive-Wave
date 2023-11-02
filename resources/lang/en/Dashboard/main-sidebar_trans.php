@@ -8,4 +8,6 @@ return [
     'All Sections' => 'All Sections',
     'All Brands' => 'All Brands',
     'Cars Brands' => 'Cars Brands',
+    'Cars Models' => 'Cars Models',
+    'All Models' => 'All Models',
 ];

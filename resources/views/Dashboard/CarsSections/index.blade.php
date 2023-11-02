@@ -13,12 +13,12 @@
     <!--Internal   Notify -->
     <link href="{{URL::asset('dashboard/plugins/notify/css/notifIt.css')}}" rel="stylesheet"/>
 
-    {{-- <style>
-        .btn-section{
-            background-color: #F77D0A !important;
-            color: #2B2E4A !important;
+    <style>
+
+        td,th{
+            vertical-align: middle;
         }
-    </style> --}}
+    </style>
 @endsection
 @section('page-header')
 				<!-- breadcrumb -->
@@ -50,24 +50,24 @@
                                         <table class="table text-md-nowrap" id="example1">
                                             <thead>
                                             <tr>
-                                                <th class="wd-15p border-bottom-0">#</th>
-                                                <th class="wd-15p border-bottom-0">{{trans('Dashboard/carssection_trans.Car Type')}}</th>
-                                                <th class="wd-20p border-bottom-0">{{trans('Dashboard/carssection_trans.Description')}}</th>
-                                                <th class="wd-20p border-bottom-0">{{trans('Dashboard/carssection_trans.Number Of Cars')}}</th>
-                                                <th class="wd-20p border-bottom-0">{{trans('Dashboard/carssection_trans.Added Date')}}</th>
-                                                <th class="wd-20p border-bottom-0">{{trans('Dashboard/carssection_trans.Actions')}}</th>
+                                                <th class="wd-15p border-bottom-0 text-center">#</th>
+                                                <th class="wd-15p border-bottom-0 text-center">{{trans('Dashboard/carssection_trans.Car Type')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carssection_trans.Description')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carssection_trans.Number Of Cars')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carssection_trans.Added Date')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carssection_trans.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                            @foreach($cars_sections as $cars_section)
                                                <tr>
-                                                   <td>{{$loop->iteration}}</td>
-                                                   <td>{{$cars_section->type}}</td>
-                                                   <td>{{$cars_section->description}}</td>
-                                                   <td>{{$cars_section->num_of_cars}}</td>
-                                                   <td>{{ $cars_section->created_at->diffForHumans() }}</td>
-                                                   <td>
-                                                       <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$cars_section->id}}"><i class="las la-pen"></i></a>
+                                                   <td class="text-center">{{$loop->iteration}}</td>
+                                                   <td class="text-center">{{$cars_section->type}}</td>
+                                                   <td class="text-center">{{$cars_section->description}}</td>
+                                                   <td class="text-center">{{$cars_section->num_of_cars}}</td>
+                                                   <td class="text-center">{{ $cars_section->created_at->diffForHumans() }}</td>
+                                                   <td class="text-center">
+                                                       <a class="modal-effect btn btn-sm btn-warning" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$cars_section->id}}"><i class="las la-pen"></i></a>
                                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$cars_section->id}}"><i class="las la-trash"></i></a>
                                                    </td>
                                                </tr>

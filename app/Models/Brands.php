@@ -12,7 +12,7 @@ class Brands extends Model
     use Translatable;
 
     protected $fillable = [
-        'name', 'country'
+        'name', 'country', 'logo_path'
     ];
 
      // 3. To define which attributes needs to be translated

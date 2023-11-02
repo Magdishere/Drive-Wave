@@ -6,6 +6,7 @@ return [
     'Country' => 'Country',
     'Close' => 'Close',
     'Save Changes' => 'Save Changes',
+    'Brand Logo' => 'Brand Logo',
     'Added Date' => 'Added Date',
     'Cars Brands' => 'Cars Brands',
     'All Brands' => 'All Brands',

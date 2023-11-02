@@ -6413,7 +6413,8 @@ textarea.form-control.is-invalid, textarea.form-control.parsley-error {
       font-weight: 500; }
   .table th, .table td {
     padding: 9px 15px;
-    line-height: 1.462; }
+    line-height: 1.462;
+vertical-align: middle;}
 
 .table-striped tbody tr:nth-of-type(2n+1) {
   background-color: rgba(238, 238, 247, 0.5); }
