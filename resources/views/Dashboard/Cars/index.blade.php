@@ -80,10 +80,10 @@
                                                     <td class="text-center">{{$car->color}}</td>
                                                     <td class="text-center">{{$car->availability}}</td>
                                                     <td class="text-center">{{$car->price_per_day}} $</td>
-                                                    <td class="text-center">{{$car->mileage}} Km</td>
+                                                    <td class="text-center">{{$car->mileage}} {{trans('Dashboard/cars_trans.Km')}}</td>
                                                     <td class="text-center">{{$car->transmission}}</td>
                                                     <td class="text-center">{{$car->seating_capacity}}</td>
-                                                    <td class="text-center">{{$car->engine_capacity}}</td>
+                                                    <td class="text-center">{{$car->engine_capacity}} {{trans('Dashboard/cars_trans.Liters')}}</td>
                                                     <td class="text-center">{{$car->license_plate}}</td>
                                                     <td class="text-center">{{$car->description}}</td>
                                                     <td class="text-center">{{$car->fuel_type}}</td>
@@ -94,8 +94,8 @@
                                                     </td>
                                                 </tr>
 
-                                                {{-- @include('Dashboard.Cars.edit')
-                                                @include('Dashboard.Cars.delete') --}}
+                                                @include('Dashboard.Cars.edit')
+                                                @include('Dashboard.Cars.delete')
                                             @endforeach
 
                                             </tbody>

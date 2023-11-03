@@ -32,6 +32,14 @@ return [
         'Diesel' => 'Diesel',
         'Electric' => 'Electric',
         'Hybrid' => 'Hybrid',
+        'Automatic' => 'Automatic',
+        'Manual' => 'Manual',
+        'Km' => 'Km',
+        'Liters' => 'Liters',
+        'Edit Car' => 'Edit Car',
+        'Delete Car' => 'Delete Brand',
+        'Delete' => 'Delete',
+        'Warning'=>'Are Sure You Want To Delete This Car ?',
 
 
 ];

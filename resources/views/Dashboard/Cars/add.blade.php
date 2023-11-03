@@ -63,8 +63,8 @@
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Transmission')}}</label>
                             <select name="transmission" class="form-control SlectBox">
-                                <option value="Automatic">Automatic</option>
-                                <option value="Manual">Manual</option>
+                                <option value="Automatic">{{trans('Dashboard/cars_trans.Automatic')}}</option>
+                                <option value="Manual">{{trans('Dashboard/cars_trans.Manual')}}</option>
                             </select>
                         </div>
                         <div class="col-md-4">
@@ -76,7 +76,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Engine Capacity')}}</label>
-                            <input type="text" name="engine_capacity" class="form-control">
+                            <input type="number" name="engine_capacity" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.License Plate')}}</label>
@@ -118,3 +118,24 @@
         </div>
     </div>
 </div>
+
+@push('js')
+<script>
+    $(document).ready(function() {
+        // When the first select (Brand) changes
+        $('select[name="brand"]').on('change', function() {
+            var selectedBrand = $(this).val();
+            console.log('Selected Brand:', selectedBrand);
+            // You can display or use the selectedBrand value as needed.
+        });
+
+        // When the second select (Car Section) changes
+        $('select[name="section"]').on('change', function() {
+            var selectedSection = $(this).val();
+            console.log('Selected Car Section:', selectedSection);
+            // You can display or use the selectedSection value as needed.
+        });
+    });
+</script>
+
+@endpush
