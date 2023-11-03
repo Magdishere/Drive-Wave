@@ -23,7 +23,9 @@
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Brand')}}</label>
                             <select name="brand" id="editBrand" class="form-control SlectBox">
-                                <option value="" selected disabled>{{trans('Dashboard/cars_trans.Select Brand')}}</option>
+                                <option value=" {{ $car->brand }}">
+                                    {{ $car->carBrands->name }}
+                                </option>
                                 @foreach ($brands as $brand)
                                     <option value="{{ $brand->id }}" {{ $car->brand_id == $brand->id ? 'selected' : '' }}>
                                         {{ $brand->name }}
@@ -34,7 +36,9 @@
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Section')}}</label>
                                 <select name="section" id="editSection" class="form-control SlectBox">
-                                    <option value="" selected disabled>{{trans('Dashboard/cars_trans.Select Section')}}</option>
+                                    <option value=" {{ $car->cars_section }}">
+                                        {{ $car->carSections->type }}
+                                    </option>
                                     @foreach ($cars_sections as $cars_section)
                                         <option value="{{ $cars_section->id }}" {{ $car->section_id == $cars_section->id ? 'selected' : '' }}>
                                             {{ $cars_section->type }}
