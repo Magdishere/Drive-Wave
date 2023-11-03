@@ -10,4 +10,6 @@ return [
     'Cars Brands' => 'Cars Brands',
     'Cars Models' => 'Cars Models',
     'All Models' => 'All Models',
+    'All Cars' => 'All Cars',
+    'Cars' => 'Cars',
 ];

@@ -12,7 +12,7 @@ class CarsModelsRepository implements CarsModelsRepositoryInterface{
 
     public function index(){
 
-        $cars_models = CarModel::with('carsSections','carsBrands')->get();;
+        $cars_models = CarModel::with('carsSections','carsBrands')->get();
         $cars_sections = CarsSections::all();
         $brands = Brands::all();
 
