@@ -78,7 +78,15 @@
                                                     <td class="text-center">{{$car->carSections->type}}</td>
                                                     <td class="text-center">{{$car->year}}</td>
                                                     <td class="text-center">{{$car->color}}</td>
-                                                    <td class="text-center">{{$car->availability}}</td>
+                                                    <td class="text-center">
+                                                        @if($car->availability == 'available')
+                                                        <span class="text-success">{{ $car->availability }}</span>
+                                                        @elseif($car->availability == 'reserved')
+                                                        <span class="text-warning">{{ $car->availability }}</span>
+                                                        @else
+                                                        <span class="text-danger">{{ $car->availability }}</span>
+                                                        @endif
+                                                    </td>
                                                     <td class="text-center">{{$car->price_per_day}} $</td>
                                                     <td class="text-center">{{$car->mileage}} {{trans('Dashboard/cars_trans.Km')}}</td>
                                                     <td class="text-center">{{$car->transmission}}</td>
