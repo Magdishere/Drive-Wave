@@ -12,4 +12,8 @@ return [
     'All Models' => 'All Models',
     'All Cars' => 'All Cars',
     'Cars' => 'Cars',
+    'Available Cars' => 'Available Cars',
+    'Rented Cars' => 'Rented Cars',
+    'Reserved Cars' => 'Reserved Cars',
+
 ];

@@ -52,6 +52,10 @@ Route::group(
             //Cars --------------------------------------------
             Route::resource('Cars', CarsController::class);
 
+            Route::get('available','App\Http\Controllers\Dashboard\CarsController@AvailableCars')->name('Cars.available');
+            Route::get('reserved','App\Http\Controllers\Dashboard\CarsController@ReservedCars')->name('Cars.reserved');
+            Route::get('rented','App\Http\Controllers\Dashboard\CarsController@RentedCars')->name('Cars.rented');
+
         });
 
 

@@ -16,5 +16,10 @@ interface CarsRepositoryInterface{
     //Delete Section
     public function destroy($request);
 
+    public function AvailableCars();
+
+    public function ReservedCars();
+
+    public function RentedCars();
 
 }

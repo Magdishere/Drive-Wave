@@ -21,6 +21,34 @@ class CarsRepository implements CarsRepositoryInterface{
         return view('Dashboard.Cars.index', compact('cars', 'cars_sections', 'brands'));
     }
 
+
+    public function AvailableCars()
+    {
+        $cars = Car::where('availability', 'available')->get();
+        $cars_sections = CarsSections::all();
+        $brands = Brands::all();
+
+        return view('Dashboard.Cars.available',compact('cars', 'cars_sections', 'brands'));
+    }
+
+    public function ReservedCars()
+    {
+        $cars = Car::where('availability', 'reserved')->get();
+        $cars_sections = CarsSections::all();
+        $brands = Brands::all();
+
+        return view('Dashboard.Cars.reserved',compact('cars', 'cars_sections', 'brands'));
+    }
+
+    public function RentedCars()
+    {
+        $cars = Car::where('availability', 'rented')->get();
+        $cars_sections = CarsSections::all();
+        $brands = Brands::all();
+
+        return view('Dashboard.Cars.rented',compact('cars', 'cars_sections', 'brands'));
+    }
+
     public function store($request)
     {
         Car::create([

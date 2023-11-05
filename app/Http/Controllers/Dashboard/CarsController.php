@@ -21,6 +21,22 @@ class CarsController extends Controller
         return  $this->Cars->index();
     }
 
+    public function AvailableCars()
+    {
+        return  $this->Cars->AvailableCars();
+    }
+
+    public function ReservedCars()
+    {
+        return  $this->Cars->ReservedCars();
+    }
+
+    public function RentedCars()
+    {
+        return  $this->Cars->RentedCars();
+    }
+
+
 
     public function store(Request $request)
     {
