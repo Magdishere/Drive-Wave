@@ -80,28 +80,43 @@
                                                     <td class="text-center">{{$car->color}}</td>
                                                     <td class="text-center">
                                                         @if($car->availability == 'available')
-                                                        <span class="text-success">{{ $car->availability }}</span>
+                                                        <span class="text-success">{{trans('Dashboard/cars_trans.Available')}}</span>
                                                         @elseif($car->availability == 'reserved')
-                                                        <span class="text-warning">{{ $car->availability }}</span>
+                                                        <span class="text-warning">{{trans('Dashboard/cars_trans.Reserved')}}</span>
                                                         @else
-                                                        <span class="text-danger">{{ $car->availability }}</span>
+                                                        <span class="text-danger">{{trans('Dashboard/cars_trans.Rented')}}</span>
                                                         @endif
                                                     </td>
                                                     <td class="text-center">{{$car->price_per_day}} $</td>
                                                     <td class="text-center">{{$car->mileage}} {{trans('Dashboard/cars_trans.Km')}}</td>
-                                                    <td class="text-center">{{$car->transmission}}</td>
+                                                    <td class="text-center">
+                                                        @if($car->transmission == 'Automatic')
+                                                        <span class="text-center">{{trans('Dashboard/cars_trans.Automatic')}}</span>
+                                                        @elseif($car->transmission == 'Manual')
+                                                        <span class="text-center">{{trans('Dashboard/cars_trans.Manual')}}</span>
+                                                        @endif
+                                                    </td>
                                                     <td class="text-center">{{$car->seating_capacity}}</td>
                                                     <td class="text-center">{{$car->engine_capacity}} {{trans('Dashboard/cars_trans.Liters')}}</td>
                                                     <td class="text-center">{{$car->license_plate}}</td>
                                                     <td class="text-center">{{$car->description}}</td>
-                                                    <td class="text-center">{{$car->fuel_type}}</td>
+                                                    <td class="text-center">
+                                                        @if($car->fuel_type == 'Gasoline')
+                                                        <span class="text-center">{{trans('Dashboard/cars_trans.Gasoline')}}</span>
+                                                        @elseif($car->fuel_type == 'Diesel')
+                                                        <span class="text-center">{{trans('Dashboard/cars_trans.Diesel')}}</span>
+                                                        @elseif($car->fuel_type == 'Electric')
+                                                        <span class="text-center">{{trans('Dashboard/cars_trans.Electric')}}</span>
+                                                        @elseif($car->fuel_type == 'Hybrid')
+                                                        <span class="text-center">{{trans('Dashboard/cars_trans.Hybrid')}}</span>
+                                                        @endif
+                                                    </td>
                                                     <td class="text-center">{{$car->created_at->diffForHumans() }}</td>
                                                     <td class="text-center">
                                                         <a class="modal-effect btn btn-sm btn-warning" data-effect="effect-scale" data-toggle="modal" href="#edit{{$car->id}}"><i class="las la-pen"></i></a>
                                                         <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#delete{{$car->id}}"><i class="las la-trash"></i></a>
                                                     </td>
                                                 </tr>
-
                                                 @include('Dashboard.Cars.edit')
                                                 @include('Dashboard.Cars.delete')
                                             @endforeach
