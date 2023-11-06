@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Car Name')}}</label>
-                            <input type="text" name="name" class="form-control" value="{{ $car->name }}">
+                            <input type="text" name="name" class="form-control" value="{{ $car->name }}" required>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Brand')}}</label>
@@ -51,22 +51,22 @@
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Color')}}</label>
-                            <input type="text" name="color" class="form-control" value="{{ $car->color }}">
+                            <input type="text" name="color" class="form-control" value="{{ $car->color }}" required>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Year')}}</label>
-                            <input type="text" name="year" class="form-control" value="{{ $car->year }}">
+                            <input type="text" name="year" class="form-control" value="{{ $car->year }}" required>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Price/Day')}}</label>
-                            <input type="number" name="price_per_day" class="form-control" value="{{ $car->price_per_day }}">
+                            <input type="number" name="price_per_day" class="form-control" value="{{ $car->price_per_day }}" required>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Mileage')}}</label>
-                            <input type="number" name="mileage" class="form-control" value="{{ $car->mileage }}">
+                            <input type="number" name="mileage" class="form-control" value="{{ $car->mileage }}" required>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Transmission')}}</label>
@@ -77,18 +77,18 @@
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Seating Capacity')}}</label>
-                            <input type="text" name="seating_capacity" class="form-control" value="{{ $car->seating_capacity }}">
+                            <input type="text" name="seating_capacity" class="form-control" value="{{ $car->seating_capacity }}" required>
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Engine Capacity')}}</label>
-                            <input type="number" name="engine_capacity" class="form-control" value="{{ $car->engine_capacity }}">
+                            <input type="number" name="engine_capacity" class="form-control" value="{{ $car->engine_capacity }}" required>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.License Plate')}}</label>
-                            <input type="text" name="license_plate" class="form-control" value="{{ $car->license_plate }}">
+                            <input type="text" name="license_plate" class="form-control" value="{{ $car->license_plate }}" required>
                         </div>
                         <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Fuel Type')}}</label>
@@ -104,7 +104,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Description')}}</label>
-                            <input type="text" name="description" class="form-control" value="{{ $car->description }}">
+                            <input type="text" name="description" class="form-control" value="{{ $car->description }}" required>
                         </div>
                         <div class="col-md-6">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Availability')}}</label>
