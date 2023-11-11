@@ -54,4 +54,9 @@ class CarsController extends Controller
     {
         return $this->Cars->destroy($request);
     }
+
+    public function images($id)
+    {
+        return $this->Cars->images($id);
+    }
 }

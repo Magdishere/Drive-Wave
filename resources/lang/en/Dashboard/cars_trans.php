@@ -39,6 +39,7 @@ return [
         'Edit Car' => 'Edit Car',
         'Delete Car' => 'Delete Brand',
         'Delete' => 'Delete',
+        'Car Images' => 'Car Images',
         'Warning'=>'Are Sure You Want To Delete This Car ?',
 
 

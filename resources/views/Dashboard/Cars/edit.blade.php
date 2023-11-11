@@ -102,17 +102,21 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Description')}}</label>
                             <input type="text" name="description" class="form-control" value="{{ $car->description }}" required>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Availability')}}</label>
                             <select name="availability" class="form-control SlectBox">
                                 <option value="available" @if($car->availability == 'available') selected @endif>{{trans('Dashboard/cars_trans.Available')}}</option>
                                 <option value="reserved" @if($car->availability == 'reserved') selected @endif>{{trans('Dashboard/cars_trans.Reserved')}}</option>
                                 <option value="rented" @if($car->availability == 'rented') selected @endif>{{trans('Dashboard/cars_trans.Rented')}}</option>
                             </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Images">{{trans('Dashboard/cars_trans.Car Images')}}</label>
+                            <input type="file" name="images[]" multiple class="form-control" accept="image/*" required>
                         </div>
                     </div>
                     <br>

@@ -94,11 +94,11 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Description')}}</label>
                             <input type="text" name="description" class="form-control" required>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="exampleInputPassword1">{{trans('Dashboard/cars_trans.Availability')}}</label>
                             <select name="availability" class="form-control SlectBox">
                                 <option value="available">{{trans('Dashboard/cars_trans.Available')}}</option>
@@ -106,9 +106,13 @@
                                 <option value="rented">{{trans('Dashboard/cars_trans.Rented')}}</option>
                             </select>
                         </div>
+                        <div class="col-md-4">
+                            <label for="Images">{{trans('Dashboard/cars_trans.Car Images')}}</label>
+                            <input type="file" name="images[]" multiple class="form-control" accept="image/*" required>
+                        </div>
                     </div>
                     <br>
-                </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Dashboard/cars_trans.Close')}}</button>
                     <button type="submit" class="btn btn-primary">{{trans('Dashboard/cars_trans.Save Changes')}}</button>

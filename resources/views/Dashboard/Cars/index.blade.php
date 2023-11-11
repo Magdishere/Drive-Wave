@@ -65,6 +65,7 @@
                                                 <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/cars_trans.License Plate')}}</th>
                                                 <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/cars_trans.Description')}}</th>
                                                 <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/cars_trans.Fuel Type')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/cars_trans.Car Images')}}</th>
                                                 <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/cars_trans.Added Date')}}</th>
                                                 <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/cars_trans.Actions')}}</th>
                                             </tr>
@@ -110,6 +111,9 @@
                                                         @elseif($car->fuel_type == 'Hybrid')
                                                         <span class="text-center">{{trans('Dashboard/cars_trans.Hybrid')}}</span>
                                                         @endif
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href={{route('Cars.images',$car->id)}} class="btn btn-outline-dark">View</a>
                                                     </td>
                                                     <td class="text-center">{{$car->created_at->diffForHumans() }}</td>
                                                     <td class="text-center">

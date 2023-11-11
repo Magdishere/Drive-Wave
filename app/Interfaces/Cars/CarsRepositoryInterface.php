@@ -22,4 +22,6 @@ interface CarsRepositoryInterface{
 
     public function RentedCars();
 
+    public function images($id);
+
 }

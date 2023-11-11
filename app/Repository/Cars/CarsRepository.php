@@ -9,6 +9,8 @@ use App\Models\BrandsTranslation;
 use App\Models\Car;
 use App\Models\CarsSections;
 use App\Models\CarsSectionsTranslation;
+use Illuminate\Support\Facades\Storage;
+
 
 class CarsRepository implements CarsRepositoryInterface{
 
@@ -51,7 +53,7 @@ class CarsRepository implements CarsRepositoryInterface{
 
     public function store($request)
     {
-        Car::create([
+        $cars = Car::create([
             'name' => $request->input('name'),
             'brand' => $request->input('brand'),
             'section' => $request->input('section'),
@@ -69,6 +71,16 @@ class CarsRepository implements CarsRepositoryInterface{
             'engine_capacity' => $request->input('engine_capacity'),
             'availability' => $request->input('availability'),
         ]);
+
+        if($request->hasFile('images')){
+            foreach($request->file('images') as $image){
+                $imagePath = $image->store('car_images', 'public');
+
+                $cars->images()->create([
+                    'image_path' => $imagePath,
+                ]);
+            }
+        }
 
         session()->flash('add');
         return redirect()->route('Cars.index');
@@ -97,6 +109,16 @@ class CarsRepository implements CarsRepositoryInterface{
             'availability' => $request->input('availability'),
         ]);
 
+            // Handle image updates here (if needed)
+        if ($request->hasFile('images')) {
+        foreach ($request->file('images') as $image) {
+            $imagePath = $image->store('car_images', 'public');
+
+            $cars->images()->create([
+                'image_path' => $imagePath,
+            ]);
+        }
+    }
         session()->flash('edit');
         return redirect()->route('Cars.index');
     }
@@ -104,9 +126,24 @@ class CarsRepository implements CarsRepositoryInterface{
     public function destroy($request){
 
 
-        Car::findOrFail($request->id)->delete();
+        $cars = Car::findOrFail($request->id);
+  // Delete associated images before deleting the car
+        foreach ($cars->images as $image) {
+            Storage::delete($image->image_path);
+            $image->delete();
+        }
+
+        $cars->delete();
+
         session()->flash('delete');
         return redirect()->route('Cars.index');
 
+    }
+
+    public function images($id){
+        $cars = Car::find($id);
+        if(!$cars) abort(404);
+        $images = $cars->images;
+        return view('Dashboard.Cars.images',compact('cars','images'));
     }
 }

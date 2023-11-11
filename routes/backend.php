@@ -56,6 +56,8 @@ Route::group(
             Route::get('reserved','App\Http\Controllers\Dashboard\CarsController@ReservedCars')->name('Cars.reserved');
             Route::get('rented','App\Http\Controllers\Dashboard\CarsController@RentedCars')->name('Cars.rented');
 
+            Route::get('/car_images/{id}',[CarsController::class,'images'])->name('Cars.images');
+
         });
 
 
