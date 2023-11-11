@@ -15,7 +15,7 @@
 	<body class="main-body app sidebar-mini">
 		<!-- Loader -->
 		<div id="global-loader">
-			<img src="{{URL::asset('Dashboard/img/keys-handover.gif')}}" style="width: 200px" class="loader-img" alt="Loader">
+			<img src="{{URL::asset('Dashboard/img/keys-handover.gif')}}" style="width: 250px" class="loader-img" alt="Loader">
 		</div>
 		<!-- /Loader -->
 		@include('Dashboard.layouts.main-sidebar')
