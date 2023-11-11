@@ -32,7 +32,8 @@
 				<!-- breadcrumb -->
 @endsection
 @section('content')
-    <h2>Car Images : <span class="text-secondary">{{$cars->name}}</span> </h2>
+    <h2>{{trans('Dashboard/cars_trans.Car Images')}} : <span class="text-secondary">{{$cars->name}}</span> </h2>
+
     <div class="row mt-4">
         @foreach ($images as $image)
             <div class="col-md-4">
@@ -46,8 +47,9 @@
 
     </div>
     <div class="">
-    <a href="/Cars" class="btn btn-primary btn-md">Go Back</a>
+        <a href="/Cars" class="btn btn-primary btn-md">{{trans('Dashboard/cars_trans.Go Back')}}</a>
     <div>
+
         <br>
 @endsection
 @section('js')
