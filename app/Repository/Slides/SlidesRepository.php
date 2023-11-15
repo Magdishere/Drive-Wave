@@ -41,9 +41,9 @@ class SlidesRepository implements SlidesRepositoryInterface{
         if ($request->hasFile('image_path')) {
             // Delete the old logo if a new one is provided
             if ($slides->image_path) {
-                Storage::disk('public')->delete($slides->imagePath);
+                Storage::disk('public')->delete($slides->image_path);
             }
-            $imagePath = $request->file('logo_path')->store('logos', 'public'); // Store the new logo image
+            $imagePath = $request->file('image_path')->store('slides', 'public'); // Store the new logo image
         }
 
         $slides->update([

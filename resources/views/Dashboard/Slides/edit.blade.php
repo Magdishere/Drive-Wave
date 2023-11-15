@@ -22,7 +22,7 @@
                     <input type="text" name="sub_title" value="{{ $slide->sub_title }}" class="form-control">
                     <br>
                     <label for="image_path">{{trans('Dashboard/slides_trans.Slide Image')}}</label>
-                    <input type="file" name="image_path" value="{{ $slide->image_path}}" id="image_path" accept="image/*" class="form-control">
+                    <input type="file" name="image_path" id="image_path" accept="image/*" class="form-control">
                     <br>
                 </div>
                 <div class="modal-footer">
