@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('slide_translations', function (Blueprint $table) {
+        Schema::create('slides_translations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('locale')->index();
 

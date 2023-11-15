@@ -1,6 +1,6 @@
 @extends('Dashboard.layouts.master')
 @section('title')
-    {{trans('Dashboard/main-sidebar_trans.Cars Brands')}}
+    {{trans('Dashboard/main-sidebar_trans.Slides')}}
 @stop
 @section('css')
     <!-- Internal Data table css -->
@@ -25,7 +25,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">{{trans('Dashboard/main-sidebar_trans.Cars Brands')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('Dashboard/main-sidebar_trans.All Brands')}}</span>
+							<h4 class="content-title mb-0 my-auto">{{trans('Dashboard/main-sidebar_trans.Slides')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('Dashboard/slides_trans.All Slides')}}</span>
 						</div>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
                                 <div class="card-header pb-0">
                                     <div class="d-flex justify-content-between">
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#add">
-                                            {{trans('Dashboard/carsbrands_trans.Add Brand')}}
+                                            {{trans('Dashboard/slides_trans.Add Slides')}}
                                         </button>
                                     </div>
                                 </div>
@@ -51,36 +51,36 @@
                                             <thead>
                                             <tr>
                                                 <th class="wd-15p border-bottom-0 text-center">#</th>
-                                                <th class="wd-15p border-bottom-0 text-center">{{trans('Dashboard/carsbrands_trans.Brand Logo')}}</th>
-                                                <th class="wd-15p border-bottom-0 text-center">{{trans('Dashboard/carsbrands_trans.Brand Name')}}</th>
-                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carsbrands_trans.Country')}}</th>
-                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carsbrands_trans.Added Date')}}</th>
-                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/carsbrands_trans.Actions')}}</th>
+                                                <th class="wd-15p border-bottom-0 text-center">{{trans('Dashboard/slides_trans.Image')}}</th>
+                                                <th class="wd-15p border-bottom-0 text-center">{{trans('Dashboard/slides_trans.Title')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/slides_trans.Subtitle')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/slides_trans.Added Date')}}</th>
+                                                <th class="wd-20p border-bottom-0 text-center">{{trans('Dashboard/slides_trans.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($brands as $brand)
+                                                @foreach($slides as $slide)
                                                 <tr>
                                                     <td class="text-center">{{$loop->iteration}}</td>
                                                     <td class="text-center">
-                                                        @if($brand->logo_path)
-                                                            <img src="{{ asset('storage/' . $brand->logo_path) }}" alt="{{ $brand->name }} Logo" width="50">
+                                                        @if($slide->image_path)
+                                                            <img src="{{ asset('storage/' . $slide->image_path) }}" alt="{{ $slide->title }} Image" width="50">
                                                         @else
                                                             <!-- You can add a placeholder image or message for brands without a logo -->
                                                             <img src="{{ asset('path/to/placeholder-image.png') }}" alt="No Logo" width="50">
                                                         @endif
                                                     </td>
-                                                    <td class="text-center" >{{$brand->name}}</td>
-                                                    <td class="text-center">{{$brand->country}}</td>
-                                                    <td class="text-center">{{ $brand->created_at->diffForHumans() }}</td>
+                                                    <td class="text-center" >{{$slide->title}}</td>
+                                                    <td class="text-center">{{$slide->sub_title}}</td>
+                                                    <td class="text-center">{{ $slide->created_at->diffForHumans() }}</td>
                                                     <td class="text-center">
-                                                        <a class="modal-effect btn btn-sm btn-warning" data-effect="effect-scale" data-toggle="modal" href="#edit{{$brand->id}}"><i class="las la-pen"></i></a>
-                                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#delete{{$brand->id}}"><i class="las la-trash"></i></a>
+                                                        <a class="modal-effect btn btn-sm btn-warning" data-effect="effect-scale" data-toggle="modal" href="#edit{{$slide->id}}"><i class="las la-pen"></i></a>
+                                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale" data-toggle="modal" href="#delete{{$slide->id}}"><i class="las la-trash"></i></a>
                                                     </td>
                                                 </tr>
 
-                                                @include('Dashboard.CarsBrands.edit')
-                                                @include('Dashboard.CarsBrands.delete')
+                                                @include('Dashboard.Slides.edit')
+                                                @include('Dashboard.Slides.delete')
                                             @endforeach
 
                                             </tbody>
@@ -91,7 +91,7 @@
                         </div>
                         <!--/div-->
 
-                    @include('Dashboard.CarsBrands.add')
+                    @include('Dashboard.Slides.add')
                     <!-- /row -->
 
 				</div>

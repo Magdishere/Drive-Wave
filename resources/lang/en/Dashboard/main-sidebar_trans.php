@@ -15,5 +15,8 @@ return [
     'Available Cars' => 'Available Cars',
     'Rented Cars' => 'Rented Cars',
     'Reserved Cars' => 'Reserved Cars',
+    'All Settings' => 'All Settings',
+    'Settings' => 'Settings',
+    'Slides' => 'Slides',
 
 ];

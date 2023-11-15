@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\CarsController;
 use App\Http\Controllers\Dashboard\CarsModelsController;
 use App\Http\Controllers\Dashboard\CarsSectionsController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\SlidesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,6 +50,8 @@ Route::group(
             Route::resource('CarsBrands', CarsBrandsController::class);
             //Cars Models--------------------------------------
             Route::resource('CarsModels', CarsModelsController::class);
+            //Slides-------------------------------------------
+            Route::resource('Slides', SlidesController::class);
             //Cars --------------------------------------------
             Route::resource('Cars', CarsController::class);
 

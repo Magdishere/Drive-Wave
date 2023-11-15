@@ -15,4 +15,7 @@ return [
     'Available Cars' => 'السيارات المتاحة',
     'Rented Cars' => 'السيارات المؤجرة',
     'Reserved Cars' => 'السيارات المحجوزة',
+    'All Settings' => 'كل الإعدادات',
+    'Settings' => 'الإعدادات',
+    'Slides' => 'شرائح الصور',
 ];

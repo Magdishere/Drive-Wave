@@ -1,48 +1,73 @@
 <?php
-namespace App\Repository\CarsSections;
+namespace App\Repository\Slides;
 
-use App\Models\CarsSections;
-use App\Interfaces\CarsSections\CarsSectionRepositoryInterface;
+use App\Interfaces\Slides\SlidesRepositoryInterface;
+use App\Models\Slides;
+use Illuminate\Support\Facades\Storage;
 
-class CarsSectionRepository implements CarsSectionRepositoryInterface{
+class SlidesRepository implements SlidesRepositoryInterface{
 
     public function index(){
 
-        $cars_sections = CarsSections::all();
-        return view('Dashboard.CarsSections.index', compact('cars_sections'));
+        $slides = Slides::all();
+        return view('Dashboard.Slides.index', compact('slides'));
     }
 
     public function store($request)
     {
-        CarsSections::create([
-            'type' => $request->input('type'),
-            'description' => $request->input('description'),
-            'num_of_cars' => $request->input('num_of_cars'),
+
+        $imagePath = '';
+
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('Slides', 'public'); // Store the Slides image in the 'public' disk
+        }
+
+        Slides::create([
+            'title' => $request->input('title'),
+            'sub_title' => $request->input('sub_title'),
+            'image_path' => $imagePath,
         ]);
 
         session()->flash('add');
-        return redirect()->route('CarsSections.index');
+        return redirect()->route('Slides.index');
     }
 
     public function update($request)
     {
-        $cars_sections = CarsSections::findOrFail($request->id);
-        $cars_sections->update([
-            'type' => $request->input('type'),
-            'description' => $request->input('description'),
-            'num_of_cars' => $request->input('num_of_cars'),
+        $slides = Slides::findOrFail($request->id);
+
+        $imagePath = $slides->image_path; // Keep the existing logo path
+
+        if ($request->hasFile('image_path')) {
+            // Delete the old logo if a new one is provided
+            if ($slides->image_path) {
+                Storage::disk('public')->delete($slides->imagePath);
+            }
+            $imagePath = $request->file('logo_path')->store('logos', 'public'); // Store the new logo image
+        }
+
+        $slides->update([
+            'title' => $request->input('title'),
+            'sub_title' => $request->input('sub_title'),
+            'image_path' => $imagePath,
         ]);
 
         session()->flash('edit');
-        return redirect()->route('CarsSections.index');
+        return redirect()->route('Slides.index');
     }
 
     public function destroy($request){
 
 
-        CarsSections::findOrFail($request->id)->delete();
+        $slides = Slides::findOrFail($request->id);
+
+        if ($slides->image_path) {
+            Storage::disk('public')->delete($slides->image_path);
+        }
+
+        $slides->delete();
         session()->flash('delete');
-        return redirect()->route('CarsSections.index');
+        return redirect()->route('Slides.index');
 
     }
 }

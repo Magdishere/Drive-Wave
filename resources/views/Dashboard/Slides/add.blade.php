@@ -3,24 +3,24 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{trans('Dashboard/carsbrands_trans.Add Brand')}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{trans('Dashboard/slides_trans.Add Slides')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('CarsBrands.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
+            <form action="{{ route('Slides.store') }}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
-                    <label for="exampleInputPassword1">{{trans('Dashboard/carsbrands_trans.Brand Name')}}</label>
-                    <input type="text" name="name" class="form-control">
-                    <label for="exampleInputPassword1">{{trans('Dashboard/carsbrands_trans.Country')}}</label>
-                    <input type="text" name="country" class="form-control">
-                    <label for="logo_path">{{trans('Dashboard/carsbrands_trans.Brand Logo')}}</label>
-                    <input type="file" name="logo_path" id="logo_path" accept="image/*" class="form-control">
+                    <label for="exampleInputPassword1">{{trans('Dashboard/slides_trans.Title')}}</label>
+                    <input type="text" name="title" class="form-control">
+                    <label for="exampleInputPassword1">{{trans('Dashboard/slides_trans.Subtitle')}}</label>
+                    <input type="text" name="sub_title" class="form-control">
+                    <label for="image_path">{{trans('Dashboard/slides_trans.Slide Image')}}</label>
+                    <input type="file" name="image_path" id="image_path" accept="image/*" class="form-control">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Dashboard/carsbrands_trans.Close')}}</button>
-                    <button type="submit" class="btn btn-primary">{{trans('Dashboard/carsbrands_trans.Save Changes')}}</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Dashboard/slides_trans.Close')}}</button>
+                    <button type="submit" class="btn btn-primary">{{trans('Dashboard/slides_trans.Save Changes')}}</button>
                 </div>
             </form>
         </div>

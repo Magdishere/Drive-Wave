@@ -3,43 +3,40 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Interfaces\Slides\SlidesRepositoryInterface;
 use Illuminate\Http\Request;
 
 class SlidesController extends Controller
 {
 
-    public function index()
+    private $Slides;
+
+    public function __construct(SlidesRepositoryInterface $Slides)
     {
-        return "Hi";
+        $this->Slides= $Slides;
     }
 
-    public function create()
+
+    public function index()
     {
-        //
+       return  $this->Slides->index();
     }
+
 
     public function store(Request $request)
     {
-        //
+        return $this->Slides->store($request);
     }
 
-    public function show($id)
+
+    public function update(Request $request)
     {
-        //
+        return $this->Slides->update($request);
     }
 
-    public function edit($id)
-    {
-        //
-    }
 
-    public function update(Request $request, $id)
+    public function destroy(Request $request)
     {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        return $this->Slides->destroy($request);
     }
 }
