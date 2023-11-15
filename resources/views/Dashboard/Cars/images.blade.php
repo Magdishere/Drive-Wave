@@ -36,7 +36,7 @@
 
     <div class="row mt-4">
         @foreach ($images as $image)
-            <div class="col-md-6">
+            <div class="col-md-12">
             <div class="card text-white bg-outline-dark mb-3" style="max-width: 1200px;">
 
                 <img src="/storage/{{$image->image_path}}" class="card-img-top">
