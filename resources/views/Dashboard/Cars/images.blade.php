@@ -36,11 +36,11 @@
 
     <div class="row mt-4">
         @foreach ($images as $image)
-            <div class="col-md-4">
-            <div class="card text-white bg-outline-dark mb-3" style="max-width: 900px;">
-                <div class="card-body">
+            <div class="col-md-6">
+            <div class="card text-white bg-outline-dark mb-3" style="max-width: 1200px;">
+
                 <img src="/storage/{{$image->image_path}}" class="card-img-top">
-                </div>
+
             </div>
             </div>
         @endforeach
