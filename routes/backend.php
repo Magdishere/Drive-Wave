@@ -61,6 +61,8 @@ Route::group(
 
             Route::get('/car_images/{id}',[CarsController::class,'images'])->name('Cars.images');
 
+            //Invoices
+
         });
 
 
