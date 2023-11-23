@@ -1,11 +1,13 @@
 
 <?php
 
+use App\Http\Controllers\Dashboard\BookingsController;
 use App\Http\Controllers\Dashboard\CarsBrandsController;
 use App\Http\Controllers\Dashboard\CarsController;
 use App\Http\Controllers\Dashboard\CarsModelsController;
 use App\Http\Controllers\Dashboard\CarsSectionsController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\LocationsController;
 use App\Http\Controllers\Dashboard\SlidesController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,8 +63,10 @@ Route::group(
 
             Route::get('/car_images/{id}',[CarsController::class,'images'])->name('Cars.images');
 
-            //Invoices
-
+            //Bookings
+            Route::resource('Bookings', BookingsController::class);
+            //Locations
+            Route::resource('Locations', LocationsController::class);
         });
 
 

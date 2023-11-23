@@ -22,6 +22,8 @@
     <link href="{{URL::asset('Dashboard/css-rtl/style-dark.css')}}" rel="stylesheet">
     <!---Skinmodes css-->
     <link href="{{URL::asset('Dashboard/css-rtl/skin-modes.css')}}" rel="stylesheet">
+    <!-- Add these in the <head> section of your Blade template -->
+
 
 @else
 
