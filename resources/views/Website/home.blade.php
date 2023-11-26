@@ -58,7 +58,7 @@
                     <div class="p-3" style="max-width: 900px;">
                         <h4 class="text-white text-uppercase mb-md-3">{{ $slide->title }}</h4>
                         <h1 class="display-1 text-white mb-md-4">{{ $slide->sub_title }}</h1>
-                        <a href="" class="btn btn-primary brn-md py-md-3 px-md-5 mt-2">Reserve Now</a>
+                        <a href="" class="btn btn-primary brn-md py-md-3 px-md-5 mt-2">Visit Link</a>
                     </div>
                 </div>
             </div>
