@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Car;
+use App\Models\CarImage;
 use App\Models\Locations;
 use App\Models\Slides;
 use Illuminate\Http\Request;
@@ -20,7 +21,9 @@ class HomeController extends Controller
         $slides = Slides::all();
         $locations = Locations::all();
         $cars = Car::all();
-        return view('Website.home', compact('slides', 'locations', 'cars'));
+        $car_images = CarImage::all();
+        $cars = Car::with('images')->get();
+        return view('Website.home', compact('slides', 'locations', 'cars', 'car_images'));
     }
 
     /**

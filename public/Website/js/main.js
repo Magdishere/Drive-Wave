@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -26,8 +26,8 @@
     $('.time').datetimepicker({
         format: 'LT'
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -124,6 +124,17 @@
             }
         }
     });
-    
+
+
+        $(".car-carousel").each(function () {
+            $(this).owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+            });
+        });
+
 })(jQuery);
 
