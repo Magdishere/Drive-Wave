@@ -1,5 +1,7 @@
 @extends('Website.layouts.website')
 @section('content')
+
+
 <!-- Search Start -->
 <div class="container-fluid bg-white pt-3 px-lg-5">
     <div class="row mx-n2">
@@ -232,11 +234,11 @@
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4 ">
 
-                    <div class="owl-carousel car-carousel owl-carousel-{{ $car->id }}" style="height: 200px;">
+                    <div class="owl-carousel car-carousel owl-carousel-{{ $car->id }}" >
 
                         @foreach($car->images as $car_image)
 
-                            <img class="img-fluid mb-4" src="{{ asset('storage/' . $car_image->image_path) }}" alt="Image">
+                            <img class="img-fluid mb-4" src="{{ asset('storage/' . $car_image->image_path) }}" alt="Image" >
 
                        @endforeach
                     </div>
@@ -252,7 +254,7 @@
                         </div>
                         <div class="px-2">
                             <i class="fa fa-road text-primary mr-1"></i>
-                            <span>{{$car->mileage}} Km</span>
+                            <span>{{$car->mileage}}Km</span>
                         </div>
                     </div>
                     <a class="btn btn-primary px-3" href="{{route('car-details' , ['id'=>$car->id])}}">{{$car->price_per_day}} $/Day</a>

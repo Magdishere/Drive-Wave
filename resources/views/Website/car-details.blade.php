@@ -1,5 +1,26 @@
 @extends('Website.layouts.website')
 @section('content')
+
+<style>
+    .car-image {
+        transition: transform 0.3s; /* Add smooth transition for the hover effect */
+    }
+
+    .car-image:hover {
+        transform: scale(1.2); /* Adjust the scale factor as needed */
+        cursor: pointer;
+    }
+    .enlarge-image {
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .enlarge-image:hover {
+        transform: scale(1.2);
+    }
+
+</style>
+
     <!-- Search Start -->
     <div class="container-fluid bg-white pt-3 px-lg-5">
         <div class="row mx-n2">
@@ -70,7 +91,7 @@
                         @foreach($cars->images as $cars_image)
                         <div class="col-md-3 col-6 px-2 pb-2">
 
-                            <img class="img-fluid w-100" src="{{ asset('storage/' . $cars_image->image_path) }}" alt="Image">
+                            <img class="img-fluid w-100 car-image enlarge-image" src="{{ asset('storage/' . $cars_image->image_path) }}" alt="Image">
 
                         </div>
                         @endforeach
@@ -279,4 +300,31 @@
         </div>
     </div>
     <!-- Vendor End -->
+
+
+    <!-- Add this script in your HTML file or in a separate JavaScript file -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.enlarge-image').click(function () {
+            var imageUrl = $(this).attr('src');
+            $('#enlarged-image').attr('src', imageUrl);
+            $('#imageModal').modal('show');
+        });
+    });
+</script>
+<!-- Add this modal HTML at the end of your body tag -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="enlarged-image" class="img-fluid" src="" alt="Enlarged Image">
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
+
+
+
