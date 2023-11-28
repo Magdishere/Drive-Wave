@@ -116,7 +116,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="Images">{{trans('Dashboard/cars_trans.Car Images')}}</label>
-                            <input type="file" name="images[]" multiple class="form-control" accept="image/*" required>
+                            <input type="file" name="images[]" multiple class="form-control" accept="image/*" >
                         </div>
                     </div>
                     <br>

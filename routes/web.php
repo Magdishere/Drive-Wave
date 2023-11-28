@@ -20,6 +20,7 @@ use App\Http\Controllers\Website\HomeController;
 // });
 
 Route::get('/','App\Http\Controllers\Website\HomeController@index')->name('home');
+Route::get('car-details/{id}','App\Http\Controllers\Website\CarDetailController@index')->name('car-details');
 
 
 Route::middleware('auth')->group(function () {

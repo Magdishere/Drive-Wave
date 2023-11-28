@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+961 76 326960</a>
+                    <a class="text-body pr-3" href="https://wa.me/+96176326960"><i class="fa fa-phone-alt mr-2"></i>+961 76 326960</a>
                     <span class="text-body">|</span>
                     <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>drivewave@gmail.com</a>
                 </div>
@@ -61,6 +61,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <!-- Topbar End -->
 

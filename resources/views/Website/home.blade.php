@@ -255,7 +255,7 @@
                             <span>{{$car->mileage}} Km</span>
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="">{{$car->price_per_day}} $/Day</a>
+                    <a class="btn btn-primary px-3" href="{{route('car-details' , ['id'=>$car->id])}}">{{$car->price_per_day}} $/Day</a>
                 </div>
             </div>
             @endforeach
@@ -504,7 +504,4 @@
 </div>
 <!-- Vendor End -->
 
-<script>
-
-</script>
 @endsection
