@@ -7,6 +7,7 @@ use App\Models\Car;
 use App\Models\CarImage;
 use App\Models\CarsSections;
 use App\Models\Locations;
+use App\Models\Slides;
 use Illuminate\Http\Request;
 
 class CarDetailController extends Controller
@@ -23,7 +24,14 @@ class CarDetailController extends Controller
         $sections = CarsSections::where('id', $id)->first();
         $images = CarImage::where('car_id', $id)->first();
         $locations = Locations::where('id', $id)->first();
-        return view('Website.car-details', compact('locations', 'cars', 'images', 'sections'));
+        $car_slides = Slides::all();
+        $rlocations = Locations::all();
+        $rcars = Car::all();
+        $rcar_images = CarImage::all();
+        $rcars = Car::with('images')->get();
+        $rcar = Car::where('id', $id)->first();
+        $rcars = Car::where('brand', $rcar->brand)->inRandomOrder()->limit(4)->get();
+        return view('Website.car-details', compact('locations', 'cars', 'images', 'sections', 'car_slides', 'rlocations', 'rcar_images', 'rcars'));
     }
 
 

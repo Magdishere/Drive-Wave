@@ -181,91 +181,44 @@
     <!-- Detail End -->
 
 
-    <!-- Related Car Start -->
-    <div class="container-fluid pb-5">
-        <div class="container pb-5">
-            <h2 class="mb-4">Related Cars</h2>
-            <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
-                <div class="rent-item">
-                    <img class="img-fluid mb-4" src="img/car-rent-1.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
+
+<!-- Related Car Start -->
+<div class="container-fluid pb-5">
+    <div class="container pb-5">
+        <h2 class="mb-4">Related Cars</h2>
+        <div class="owl-carousel main-carousel position-relative" style="padding: 0 30px;">
+
+            @foreach($rcars as $car)
+            <div class="col-lg-4 col-md-6 mb-2">
+            <div class="rent-item mb-4">
+                <div class="owl-carousel car-carousel-{{ $car->id }} mb-4">
+                    @foreach($car->images as $car_image)
+                        <img class="img-fluid mb-4" src="{{ asset('storage/' . $car_image->image_path) }}" alt="Image">
+                    @endforeach
                 </div>
-                <div class="rent-item">
-                    <img class="img-fluid mb-4" src="img/car-rent-2.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
+                <h4 class="text-uppercase mb-4">{{$car->name}}</h4>
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="px-2">
+                        <i class="fa fa-car text-primary mr-1"></i>
+                        <span>{{$car->year}}</span>
                     </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
-                </div>
-                <div class="rent-item">
-                    <img class="img-fluid mb-4" src="img/car-rent-3.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
+                    <div class="px-2 border-left border-right">
+                        <i class="fa fa-cogs text-primary mr-1"></i>
+                        <span>{{$car->transmission}}</span>
                     </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
-                </div>
-                <div class="rent-item">
-                    <img class="img-fluid mb-4" src="img/car-rent-4.png" alt="">
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
+                    <div class="px-2">
+                        <i class="fa fa-road text-primary mr-1"></i>
+                        <span>{{$car->mileage}}Km</span>
                     </div>
-                    <a class="btn btn-primary px-3" href="">$99.00/Day</a>
                 </div>
+                <a class="btn btn-primary px-3" href="{{route('car-details' , ['id'=>$car->id])}}">{{$car->price_per_day}} $/Day</a>
             </div>
+            </div>
+            @endforeach
+
         </div>
     </div>
-    <!-- Related Car End -->
+</div>
 
 
     <!-- Vendor Start -->
@@ -311,6 +264,30 @@
             $('#enlarged-image').attr('src', imageUrl);
             $('#imageModal').modal('show');
         });
+
+      // Initialize the main carousel
+      $('.main-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 3000, // Set the time between slides in milliseconds (5 seconds in this example)
+        nav: false,
+        items: 1,
+        dots: false,
+    });
+
+    // Initialize individual car carousels
+    @foreach($rcars as $car)
+    $('.car-carousel-{{ $car->id }}').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 4000, // Set the time between slides in milliseconds (5 seconds in this example)
+        nav: false,
+        items: 1,
+        dots: false,
+    });
+    @endforeach
     });
 </script>
 <!-- Add this modal HTML at the end of your body tag -->
