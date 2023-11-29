@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brands;
 use App\Models\Car;
 use App\Models\CarImage;
 use App\Models\CarsSections;
@@ -25,13 +26,14 @@ class CarDetailController extends Controller
         $images = CarImage::where('car_id', $id)->first();
         $locations = Locations::where('id', $id)->first();
         $car_slides = Slides::all();
+        $brands = Brands::all();
         $rlocations = Locations::all();
         $rcars = Car::all();
         $rcar_images = CarImage::all();
         $rcars = Car::with('images')->get();
         $rcar = Car::where('id', $id)->first();
         $rcars = Car::where('brand', $rcar->brand)->inRandomOrder()->limit(4)->get();
-        return view('Website.car-details', compact('locations', 'cars', 'images', 'sections', 'car_slides', 'rlocations', 'rcar_images', 'rcars'));
+        return view('Website.car-details', compact('locations', 'cars', 'images', 'sections', 'car_slides', 'rlocations', 'rcar_images', 'rcars', 'brands'));
     }
 
 
