@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Interfaces\About\AboutRepositoryInterface;
+use App\Repository\About\AboutRepository;
 use App\Interfaces\Bookings\BookingsRepositoryInterface;
 use App\Interfaces\Cars\CarsRepositoryInterface;
 use App\Interfaces\CarsBrands\CarsBrandsRepositoryInterface;
@@ -36,6 +38,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(SlidesRepositoryInterface::class, SlidesRepository::class);
         $this->app->bind(BookingsRepositoryInterface::class, BookingsRepository::class);
         $this->app->bind(LocationsRepositoryInterface::class, LocationsRepository::class);
+        $this->app->bind(AboutRepositoryInterface::class, AboutRepository::class);
     }
 
     /**

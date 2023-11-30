@@ -1,6 +1,7 @@
 
 <?php
 
+use App\Http\Controllers\Dashboard\AboutController;
 use App\Http\Controllers\Dashboard\BookingsController;
 use App\Http\Controllers\Dashboard\CarsBrandsController;
 use App\Http\Controllers\Dashboard\CarsController;
@@ -67,6 +68,8 @@ Route::group(
             Route::resource('Bookings', BookingsController::class);
             //Locations
             Route::resource('Locations', LocationsController::class);
+            //About
+            Route::resource('About', AboutController::class);
         });
 
 

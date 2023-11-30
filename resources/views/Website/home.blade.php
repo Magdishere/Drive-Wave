@@ -238,7 +238,7 @@
 
                         @foreach($car->images as $car_image)
 
-                            <img class="img-fluid mb-4" src="{{ asset('storage/' . $car_image->image_path) }}" alt="Image" >
+                            <img class="img-fluid mb-4 car-image" src="{{ asset('storage/' . $car_image->image_path) }}" alt="Image" >
 
                        @endforeach
                     </div>

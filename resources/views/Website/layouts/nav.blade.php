@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="{{route('about')}}" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
@@ -25,26 +25,45 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="team.html" class="dropdown-item">The Team</a>
+
+                                <a href="#" class="dropdown-item">The Team</a>
+
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
 
-                        @if (Route::has('login'))
-                            @auth
-                                <a href="{{ url('/Dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                            @else
-                                <a href="{{ route('login') }}" class="nav-item nav-link" style="color: #F77D0A;
-                                border-color: #F77D0A;">Log in</a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="nav-item nav-link" style="color: #F77D0A;
-                                    border-color: #F77D0A;">Register</a>
-                                @endif
-                            @endauth
-
+                        @if (Auth::guard('admin')->check())
+                        <a href="#" class="nav-item nav-link"  style="color: #F77D0A; border-color: #F77D0A;">{{ Auth::guard('admin')->user()->name }}</a>
+                        <form method="POST" action="{{ route('logout.admin') }}">
+                            @csrf
+                            <a href="{{ route('logout.admin') }}"
+                               onclick="event.preventDefault(); this.closest('form').submit();"
+                               class="nav-item nav-link"
+                               style="color: #F77D0A; border-color: #F77D0A;"
+                            >
+                                Logout
+                            </a>
+                        </form>
+                    @elseif (Auth::check())
+                        <a href="#" class="nav-item nav-link" style="color: #F77D0A; border-color: #F77D0A;">{{ Auth::user()->name }}</a>
+                        <form method="POST" action="{{ route('logout.user') }}">
+                            @csrf
+                            <a href="{{ route('logout.user') }}"
+                               onclick="event.preventDefault(); this.closest('form').submit();"
+                               class="nav-item nav-link"
+                               style="color: #F77D0A; border-color: #F77D0A;"
+                            >
+                                Logout
+                            </a>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="nav-item nav-link" style="color: #F77D0A; border-color: #F77D0A;">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="nav-item nav-link" style="color: #F77D0A; border-color: #F77D0A;">Register</a>
+                        @endif
                     @endif
+
 
                     </div>
                 </div>

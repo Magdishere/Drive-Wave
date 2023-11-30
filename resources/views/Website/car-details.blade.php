@@ -222,8 +222,9 @@
 
 
     <!-- Vendor Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
+    <div class="container-fluid">
+        <div class="container ">
+            <h2 class="mb-4">Our Brands</h2>
             <div class="owl-carousel vendor-carousel">
                 @foreach($brands as $brand)
                 <div class=" p-4">

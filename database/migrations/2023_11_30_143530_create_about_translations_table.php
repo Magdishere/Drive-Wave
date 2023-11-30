@@ -13,23 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('slides_translations', function (Blueprint $table) {
+        Schema::create('about_translations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('locale')->index();
 
-        // Foreign key to the main model
-        $table->unsignedBigInteger('slides_id');
-        $table->unique(['slides_id', 'locale']);
-        $table->foreign('slides_id')->references('id')->on('slides')->onDelete('cascade');
+            $table->unsignedBigInteger('abouts_id');
+            $table->unique(['abouts_id', 'locale']);
+            $table->foreign('abouts_id')->references('id')->on('abouts')->onDelete('cascade');
 
+            $table->string('title');
+            $table->text('paragraph');
 
-        $table->string('title');
-        $table->string('sub_title');
+            $table->string('info');
 
-
+            $table->timestamps();
         });
-
-
     }
 
     /**
@@ -39,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slide_translations');
+        Schema::dropIfExists('about_translations');
     }
 };

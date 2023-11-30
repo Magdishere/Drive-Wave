@@ -22,7 +22,7 @@
 				<ul class="side-menu">
 					<li class="side-item side-item-category">{{ trans('Dashboard/main-sidebar_trans.Car Rental Software') }}</li>
 					<li class="slide">
-						<a class="side-menu__item" href="{{ url('/' . $page='index') }}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3"/><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"/></svg><span class="side-menu__label">{{ trans('Dashboard/main-sidebar_trans.Home') }}</span></a>
+						<a class="side-menu__item" href="{{route('home')}}"><svg xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M5 5h4v6H5zm10 8h4v6h-4zM5 17h4v2H5zM15 5h4v2h-4z" opacity=".3"/><path d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z"/></svg><span class="side-menu__label">{{ trans('Dashboard/main-sidebar_trans.Home') }}</span></a>
 					</li>
 					<li class="side-item side-item-category">{{ trans('Dashboard/main-sidebar_trans.All Sections') }}</li>
 					<li class="slide">
@@ -48,7 +48,7 @@
 						<ul class="slide-menu">
 							<li><a class="slide-item" href="{{route('Slides.index')}}">{{ trans('Dashboard/main-sidebar_trans.Slides') }}</a></li>
                             <li><a class="slide-item" href="{{route('Locations.index')}}">{{ trans('Dashboard/locations_trans.Locations') }}</a></li>
-							<li><a class="slide-item" href="{{ url('/' . $page='rangeslider') }}">Range-slider</a></li>
+							<li><a class="slide-item" href="{{route('About.index')}}">About</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='calendar') }}">Calendar</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='contacts') }}">Contacts</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='image-compare') }}">Image-compare</a></li>
