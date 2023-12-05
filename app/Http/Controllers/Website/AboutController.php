@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brands;
+use App\Models\Car;
+use App\Models\Locations;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -16,7 +18,9 @@ class AboutController extends Controller
     public function index()
     {
         $brands = Brands::all();
-        return view('Website.about', compact('brands'));
+        $locations = Locations::all();
+        $cars = Car::all();
+        return view('Website.about', compact('brands', 'locations', 'cars'));
     }
 
     /**
