@@ -41,9 +41,9 @@
             <div class="row">
                 <div class="col-lg-8 mb-5">
 
-                    <h1 class="display-4 text-uppercase mb-5">{{$cars->name}}</h1>
+                    <h1 class="display-4 text-uppercase mb-5">{{$ncars->name}}</h1>
                     <div class="row mx-n2 mb-3">
-                        @foreach($cars->images as $cars_image)
+                        @foreach($ncars->images as $cars_image)
                         <div class="col-md-3 col-6 px-2 pb-2">
 
                             <img class="img-fluid w-100 car-image enlarge-image" src="{{ asset('storage/' . $cars_image->image_path) }}" alt="Image">
@@ -52,39 +52,39 @@
                         @endforeach
                     </div>
 
-                    <p>{{$cars->description}}</p>
+                    <p>{{$ncars->description}}</p>
                     <div class="row pt-2">
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: {{$cars->year}}</span>
+                            <span>Model: {{$ncars->year}}</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>{{$cars->carSections->type}}</span>
+                            <span>{{$ncars->carSections->type}}</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-cogs text-primary mr-2"></i>
-                            <span>{{$cars->transmission}}</span>
+                            <span>{{$ncars->transmission}}</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-road text-primary mr-2"></i>
-                            <span>Mileage: {{$cars->mileage}} Km</span>
+                            <span>Mileage: {{$ncars->mileage}} Km</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
-                            @if($cars->availability == 'available')
+                            @if($ncars->availability == 'available')
                             <i class="fa fa-check-circle text-success mr-2"></i>
                             <span class="text-success">Available</span>
-                        @elseif($cars->availability == 'reserved')
+                        @elseif($ncars->availability == 'reserved')
                             <i class="fa fa-exclamation-circle text-warning mr-2"></i>
                             <span class="text-warning">Reserved</span>
-                        @elseif($cars->availability == 'rented')
+                        @elseif($ncars->availability == 'rented')
                             <i class="fa fa-times-circle text-danger mr-2"></i>
                             <span class="text-danger">Rented</span>
                         @endif
                         </div>
                     </div>
 
-               </div>
+                </div>
 
                 <div class="col-lg-4 mb-5">
                     <div class="bg-secondary p-5">

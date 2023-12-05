@@ -21,10 +21,11 @@ class CarDetailController extends Controller
     public function index($id)
     {
 
-        $cars = Car::where('id', $id)->first();
+        $ncars = Car::where('id', $id)->first();
+        $cars = Car::all();
         $sections = CarsSections::where('id', $id)->first();
         $images = CarImage::where('car_id', $id)->first();
-        $locations = Locations::where('id', $id)->first();
+        $locations = Locations::all();
         $car_slides = Slides::all();
         $brands = Brands::all();
         $rlocations = Locations::all();
@@ -33,7 +34,7 @@ class CarDetailController extends Controller
         $rcars = Car::with('images')->get();
         $rcar = Car::where('id', $id)->first();
         $rcars = Car::where('brand', $rcar->brand)->inRandomOrder()->limit(4)->get();
-        return view('Website.car-details', compact('locations', 'cars', 'images', 'sections', 'car_slides', 'rlocations', 'rcar_images', 'rcars', 'brands'));
+        return view('Website.car-details', compact('locations', 'ncars', 'images', 'sections', 'car_slides', 'rlocations', 'rcar_images', 'rcars', 'brands', 'cars'));
     }
 
 
