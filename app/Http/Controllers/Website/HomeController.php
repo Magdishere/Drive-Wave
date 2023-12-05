@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brands;
 use App\Models\Car;
 use App\Models\CarImage;
 use App\Models\Locations;
@@ -23,7 +24,8 @@ class HomeController extends Controller
         $cars = Car::all();
         $car_images = CarImage::all();
         $cars = Car::with('images')->get();
-        return view('Website.home', compact('slides', 'locations', 'cars', 'car_images'));
+        $brands = Brands::all();
+        return view('Website.home', compact('slides', 'locations', 'cars', 'car_images', 'brands'));
     }
 
     /**

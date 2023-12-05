@@ -220,21 +220,8 @@
     </div>
 </div>
 
+@include('Website.Includes.vendor')
 
-    <!-- Vendor Start -->
-    <div class="container-fluid">
-        <div class="container ">
-            <h2 class="mb-4">Our Brands</h2>
-            <div class="owl-carousel vendor-carousel">
-                @foreach($brands as $brand)
-                <div class=" p-4">
-                    <img src="{{ asset('storage/' . $brand->logo_path) }}" alt="Brand Logo">
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
 
 
     <!-- Add this script in your HTML file or in a separate JavaScript file -->
