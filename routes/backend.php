@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\CarsModelsController;
 use App\Http\Controllers\Dashboard\CarsSectionsController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\LocationsController;
+use App\Http\Controllers\Dashboard\ServicesController;
 use App\Http\Controllers\Dashboard\SlidesController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,6 +71,8 @@ Route::group(
             Route::resource('Locations', LocationsController::class);
             //About
             Route::resource('About', AboutController::class);
+            //Services
+            Route::resource('Services', ServicesController::class);
         });
 
 

@@ -49,7 +49,7 @@
 							<li><a class="slide-item" href="{{route('Slides.index')}}">{{ trans('Dashboard/main-sidebar_trans.Slides') }}</a></li>
                             <li><a class="slide-item" href="{{route('Locations.index')}}">{{ trans('Dashboard/locations_trans.Locations') }}</a></li>
 							<li><a class="slide-item" href="{{route('About.index')}}">About</a></li>
-							<li><a class="slide-item" href="{{ url('/' . $page='calendar') }}">Calendar</a></li>
+							<li><a class="slide-item" href="{{route('Services.index')}}">Services</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='contacts') }}">Contacts</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='image-compare') }}">Image-compare</a></li>
 							<li><a class="slide-item" href="{{ url('/' . $page='notification') }}">Notification</a></li>
