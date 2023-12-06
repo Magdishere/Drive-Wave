@@ -25,10 +25,10 @@
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="service-item d-flex flex-column justify-content-center px-4 mb-4">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <div class="d-flex align-items-center justify-content-center bg-primary ml-n4" style="width: 80px; height: 80px;">
+                            <div class="d-flex align-items-center rounded justify-content-center bg-primary ml-n8" style="width: 90px; height: 90px;">
                                 <img class="img-fluid" src="{{ asset('storage/' . $service->image_path) }}" alt="Image">
                             </div>
-                            <h1 class="display-4 mt-n2 m-0" style="color: black;">${{$service->price}}</h1>
+                            <h1 class="display-4 mt-n2 m-0">${{$service->price}}</h1>
                         </div>
                         <h4 class="text-uppercase mb-3">{{$service->name}}</h4>
                         <p class="m-0">{{$service->description}}</p>

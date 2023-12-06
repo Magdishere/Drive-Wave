@@ -152,7 +152,7 @@ h6,
 
 .service-item:hover h1,
 .service-item.active h1 {
-    color: var(--dark) !important;
+    color: var(--light) !important;
 }
 
 .service-item:hover h4,

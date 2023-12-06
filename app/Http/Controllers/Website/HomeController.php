@@ -7,6 +7,7 @@ use App\Models\Brands;
 use App\Models\Car;
 use App\Models\CarImage;
 use App\Models\Locations;
+use App\Models\Services;
 use App\Models\Slides;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class HomeController extends Controller
         $car_images = CarImage::all();
         $cars = Car::with('images')->get();
         $brands = Brands::all();
-        return view('Website.home', compact('slides', 'locations', 'cars', 'car_images', 'brands'));
+        $services = Services::all();
+        return view('Website.home', compact('slides', 'locations', 'cars', 'car_images', 'brands', 'services'));
     }
 
     /**
