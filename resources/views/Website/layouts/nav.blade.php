@@ -13,7 +13,7 @@
                     <div class="navbar-nav ml-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
                         <a href="{{route('about')}}" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="{{route('service')}}" class="nav-item nav-link">Services</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">

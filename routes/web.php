@@ -23,6 +23,7 @@ use App\Http\Controllers\Website\HomeController;
 Route::get('/','App\Http\Controllers\Website\HomeController@index')->name('home');
 Route::get('about','App\Http\Controllers\Website\AboutController@index')->name('about');
 Route::get('car-details/{id}','App\Http\Controllers\Website\CarDetailController@index')->name('car-details');
+Route::get('service','App\Http\Controllers\Website\ServiceController@index')->name('service');
 
 
 Route::middleware('auth')->group(function () {
