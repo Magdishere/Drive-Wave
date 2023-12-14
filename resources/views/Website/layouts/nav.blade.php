@@ -31,7 +31,7 @@
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
 
                         @if (Auth::guard('admin')->check())
                         <a href="#" class="nav-item nav-link"  style="color: #F77D0A; border-color: #F77D0A;">{{ Auth::guard('admin')->user()->name }}</a>
